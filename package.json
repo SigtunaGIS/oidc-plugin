@@ -5,27 +5,31 @@
   "main": "oidc.js",
   "scripts": {
     "start": "npm run watch-js",
-    "watch-js": "webpack-cli serve --config ./tasks/webpack.dev.js --mode development",
+    "watch-js": "webpack serve --config ./tasks/webpack.dev.js --mode development",
     "build": "webpack --config ./tasks/webpack.prod.js",
     "build:dev": "webpack --config ./tasks/webpack.dev.js --mode development"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.29.6",
-    "@babel/plugin-transform-runtime": "^7.28.5",
-    "@babel/preset-env": "^7.28.5",
-    "babel-loader": "^10.0.0",
+    "@babel/core": "^8.1.2",
+    "@babel/plugin-transform-runtime": "^8.1.2",
+    "@babel/preset-env": "^8.0.7",
+    "babel-loader": "^10.1.1",
+    "babel-plugin-polyfill-corejs3": "^1.0.0",
     "exports-loader": "^5.0.0",
     "imports-loader": "^5.0.0",
-    "terser-webpack-plugin": "^5.3.17",
-    "webpack": "^5.105.0",
-    "webpack-bundle-analyzer": "^5.0.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.4",
+    "terser-webpack-plugin": "^5.6.1",
+    "webpack": "^5.112.2",
+    "webpack-bundle-analyzer": "^5.4.2",
+    "webpack-cli": "^7.3.1",
+    "webpack-dev-server": "^6.1.0",
     "webpack-merge": "^6.0.1"
   },
   "dependencies": {
-    "core-js": "^3.47.0"
+    "core-js": "^3.51.0"
+  },
+  "allowScripts": {
+    "core-js@3.51.0": true
   }
 }
