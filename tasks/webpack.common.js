@@ -16,27 +16,20 @@ module.exports = {
             targets: {
               browsers: ['chrome >= 39']
             },
-            modules: false,
-            useBuiltIns: 'usage', 
-            corejs: 3
+            modules: false
           }]
         ],
-        // plugins: [
-        //   ['@babel/plugin-transform-runtime', {
-        //     regenerator: true,
-        //     corejs: 2
-        //   }]
-        // ]
+        plugins: [
+          ['babel-plugin-polyfill-corejs3', {
+            method: 'usage-global',
+            version: '3.51'
+          }]
+        ]
       }
     }]
   },
   externals: ['Origo'],
   resolve: {
     extensions: ['*', '.js', '.scss']
-  },
-  // plugins: [
-  //   new webpack.ProvidePlugin({
-  //     fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
-  //   })
-  // ]
+  }
 };
